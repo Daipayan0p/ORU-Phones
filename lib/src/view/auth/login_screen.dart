@@ -49,6 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        surfaceTintColor: Colors.white,
         backgroundColor: Colors.white,
         actions: [
           Padding(
@@ -66,17 +67,24 @@ class _LoginScreenState extends State<LoginScreen> {
         ],
       ),
       body: SafeArea(
-        child: SizedBox(
-          width: double.infinity,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              _header(),
-              SizedBox(height: 100),
-              _phn_num_area(),
-              SizedBox(height: 100),
-              _footer(),
-            ],
+        child: GestureDetector(
+          onTap: (){
+            FocusScope.of(context).unfocus();
+          },
+          child: SingleChildScrollView(
+            child: SizedBox(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  _header(),
+                  SizedBox(height: 100),
+                  _phn_num_area(),
+                  SizedBox(height: 100),
+                  _footer(),
+                ],
+              ),
+            ),
           ),
         ),
       ),

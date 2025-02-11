@@ -84,6 +84,7 @@ class _VerifyScreenState extends State<VerifyScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        surfaceTintColor: Colors.white,
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 15),
@@ -99,19 +100,26 @@ class _VerifyScreenState extends State<VerifyScreen> {
           ),
         ],
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            _header(),
-            SizedBox(height: 60),
-            _otpView(),
-            SizedBox(height: 60),
-            _timerSection(),
-            SizedBox(height: 100),
-            _button(width)
-          ],
+      body: GestureDetector(
+        onTap: (){
+          FocusScope.of(context).unfocus();
+        },
+        child: SingleChildScrollView(
+          child: SizedBox(
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                _header(),
+                SizedBox(height: 60),
+                _otpView(),
+                SizedBox(height: 60),
+                _timerSection(),
+                SizedBox(height: 100),
+                _button(width)
+              ],
+            ),
+          ),
         ),
       ),
     );

@@ -57,6 +57,7 @@ class _NameScreenState extends State<NameScreen> {
         builder: (context, viewModel, child) {
           return Scaffold(
             appBar: AppBar(
+              surfaceTintColor: Colors.white,
               actions: [
                 Padding(
                   padding: const EdgeInsets.only(right: 15),
